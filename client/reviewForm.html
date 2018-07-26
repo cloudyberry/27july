@@ -40,8 +40,13 @@
 				<!--jokeName,semester,recommendation,diff,workload,steepness,jokePost-->
 <div class = "wrap">
 				<h6 class="modulecode">Module Code:</h6>
-
-                  <select class="form-control" id="reviewName" name="reviewName" autofocus>
+				<select id="reviewName" class="demo-default" placeholder="Select a module...">
+					<option value="">Select a module...</option>
+					{{#each Modules}}
+					<option value="{{ModuleCode}} {{ModuleTitle}}">{{ModuleCode}} {{ModuleTitle}}</option>
+					{{/each}}
+				</select>
+                  <!-- <select class="form-control" id="reviewName" name="reviewName" autofocus>
 										<option>ACC1002: Financial Accounting</option>
 															<option>ACC3605: Taxation</option>
 															<option>ACC4619: Advanced Independent Study in Accounting</option>
@@ -86,7 +91,7 @@
 															<option>SC3223: Visual Culture I: Seeing & Representing</option>
 															<option>SC3225: Social Capital</option>
 															<option>SC4212: Social Memory</option>
-                  </select>
+                  </select> -->
 								</div>
 				<!--<label for="reviewName" class="sr-only">Module Code: Module Name</label>
 				<input type="text" name="reviewName" id="reviewName" class="form-control" placeholder="e.g. CS1231: Discrete Structures" >-->

@@ -93,3 +93,10 @@ var isNotEmpty = function(value){
 	Bert.alert("Please fill in all fields", "danger", "growl-top-right");
 	return false;
 };
+
+Template.reviewForm.helpers({
+  Modules() {
+         console.log(Modules.find().count());
+         return Modules.find({}, {sort: {ModuleCode:1}});
+     },
+})

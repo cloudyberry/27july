@@ -3,6 +3,7 @@ import { OAuth } from 'meteor/oauth'
 import { Meteor } from 'meteor/meteor'
 import { Random } from 'meteor/random'
 import { HTTP } from 'meteor/http'
+import { Modules } from '../api/utilities.js';
 
 // import './main.html';
 
@@ -106,7 +107,7 @@ Template.hello.events({
 
 			} else {
 				Router.go('/');
-				
+
 			}
 		});
     Session.set('name', null);
