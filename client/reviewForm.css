@@ -37,7 +37,15 @@
 	outline: white !important;
   font-family: Montserrat !important;
 }
+.demo-default{
+	width: 660px !important;
+	border-color: white !important;
+	-webkit-box-shadow: white !important;
+	box-shadow: none !important;
+	outline: white !important;
+	font-family: Montserrat !important;
 
+}
 /* .form-control::after {
   border-color: white;
   -webkit-box-shadow: white;
