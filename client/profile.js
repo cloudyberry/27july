@@ -76,7 +76,11 @@ Template.profile.helpers({
 				if (userId === adminId) {
 				return false;
 			}
-		}
+		},
+		Modules() {
+			 console.log(Modules.find().count());
+			 return Modules.find({}, {sort: {ModuleCode:1}});
+	 },
 
 });
 

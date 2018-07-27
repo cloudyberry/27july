@@ -18,9 +18,6 @@ Template.reviews.helpers({
 		return true;
 	}
 	},
-	// author: function() {
-	// 	return Meteor.user().profile.username;
-	// },
 
 		comms: function() {
       var comms = Comments.find({}, {sort: {createdAt: -1}});
@@ -36,7 +33,13 @@ Template.reviews.helpers({
 		},
 		disliked: function () {
 				return Session.equals('dislikeId', this._id);
-		}
+		},
+
+		Modules() {
+				 console.log(Modules.find().count());
+				 return Modules.find({}, {sort: {ModuleCode:1}});
+		 }
+
 
 
 });
@@ -51,6 +54,9 @@ Template.reviews.events({
 	},
 
 	"click #like": function() {
+		if (!Meteor.userId()) {
+			Bert.alert("Please log in to Vote", "danger", "growl-top-right");
+		}
 		Session.set('likeId', this._id);
 
 		var thisUser = Meteor.userId();
@@ -58,6 +64,7 @@ Template.reviews.events({
 		var reviewAuthor =Reviews.findOne({_id: this._id}).userId;
 		var Name =  Meteor.user().profile.username;
 		var thisReviewsVotes = Reviews.findOne({_id: this._id}, {voted: {$in: Name}}).voted;
+
 
 		  // detect voting by author
 			// console.log(Reviews.findOne({_id: this._id}).userId);
@@ -108,6 +115,9 @@ Template.reviews.events({
 
 
 	"click #dislike": function() {
+		if (!Meteor.userId()) {
+			Bert.alert("Please log in to Vote", "danger", "growl-top-right");
+		}
 		Session.set('dislikeId', this._id);
 		var thisUser = Meteor.userId();
 		var thisReview = Reviews.findOne({_id: this._id})._id;
@@ -115,6 +125,7 @@ Template.reviews.events({
 		//var Name = Meteor.user().username;
 		var Name = Meteor.user().profile.username;;
 		var thisReviewsVotes = Reviews.findOne({_id: this._id}, {voted: {$in: Name}}).voted;
+
 
 		if (Reviews.findOne({_id: this._id}).userId==Meteor.userId()) {
 
@@ -162,6 +173,9 @@ Template.reviews.events({
 	//	var thisUser = Meteor.userId();
 	//	var thisReview = Reviews.findOne({_id: this._id})._id;
 	//	var reviewAuthor = Reviews.findOne({_id: this._id}).userId;
+	if (!Meteor.userId()) {
+		Bert.alert("Please log in to Comment", "danger", "growl-top-right");
+	}
 	Session.set('showCommentsId', this._id);
 },
 

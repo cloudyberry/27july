@@ -37,6 +37,7 @@
 	outline: white !important;
   font-family: Montserrat !important;
 }
+
 .demo-default{
 	width: 660px !important;
 	border-color: white !important;
@@ -46,6 +47,7 @@
 	font-family: Montserrat !important;
 
 }
+
 /* .form-control::after {
   border-color: white;
   -webkit-box-shadow: white;
@@ -80,4 +82,16 @@
 
 .reviewForm-heading{
 	text-align: center !important;
+}
+
+/* Mobile phone layout */
+@media (max-width: 450px) {
+
+  #reviewForm-wrap {
+  	/*border: 1px solid #ececec;*/
+  	/*background-color: #2d2d2d;*/
+
+    width: 350px;
+  }
+
 }

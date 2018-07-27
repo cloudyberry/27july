@@ -9,8 +9,13 @@
 			<h2 class="searchForm-heading">Search Module</h2>
     		<div class = "wrap1">
 					<h6 class="modulecode">Module Code:</h6>
-								<select class="form-control" id="reviewName" name="reviewName">
-									<option>ACC1002: Financial Accounting</option>
+								<select class="form-control" id="reviewName" name="reviewName" placeholder="Select a module...">
+									<option value="">Select a module...</option>
+									{{#each Modules}}
+									<option value="{{ModuleCode}} {{ModuleTitle}}">{{ModuleCode}} {{ModuleTitle}}</option>
+									{{/each}}
+								</select>
+									<!-- <option>ACC1002: Financial Accounting</option>
 																	<option>ACC3605: Taxation</option>
 																	<option>ACC4619: Advanced Independent Study in Accounting</option>
 																	<option>AR5421: Architectural Practice 1</option>
@@ -54,7 +59,7 @@
 																	<option>SC3223: Visual Culture I: Seeing & Representing</option>
 																	<option>SC3225: Social Capital</option>
 																	<option>SC4212: Social Memory</option>
-								</select>
+								</select> -->
 							</div>
 			<button class="btn btn-lg btn-info btn-block" type="submit" id="search-module">Search Module</button>
 		</form>

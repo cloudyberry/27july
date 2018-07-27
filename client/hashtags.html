@@ -4,10 +4,9 @@
   {{#if admin}}
   {{else}}
 
-
 	{{#each hashtagged}}
 	<!-- Joke -->
-	<div class="review">
+  <div class="review">
 		<div class="row">
 			<div class=".col-sm-6 .col-md-5 .col-lg-6" id="info">
 				<!--jokeName,semester,recommendation,diff,workload,steepness,jokePost-->
@@ -38,18 +37,29 @@
 		<!--<p class="meta">Posted by: {{author}} on {{date}}</p>-->
 		<p class="meta">Posted by: {{author}}(Year {{year}}) from {{school}} on {{date}}</p>
 
+    {{#if liked}}
+    <button type="button" class="btn btn-danger" id="unlike"><span class="glyphicon glyphicon-thumbs-up"></span> Likes ({{likeScore}})</button>
+    {{else}}
 		<button type="button" class="btn btn-danger" id="like"><span class="glyphicon glyphicon-thumbs-up"></span> Likes ({{likeScore}})</button>
+    {{/if}}
+
+
+    {{#if disliked}}
+    <button type="button" class="btn btn-warning" id="undislike"><span class="glyphicon glyphicon-thumbs-down"></span> Dislikes ({{dislikeScore}})</button>
+    {{else}}
 		<button type="button" class="btn btn-warning" id="dislike"><span class="glyphicon glyphicon-thumbs-down"></span> Dislikes ({{dislikeScore}})</button>
-		<button type="button" class="btn btn-info" id="showcomment"><span class="glyphicon glyphicon-comment"></span> Comment ({{commentScore}})</button>
+    {{/if}}
 
-	{{# if displayComments}}
-	{{> comments}}
-	{{else}}
-	{{commentSect}}
-  {{/if}}
-	<!-- End Review Form-->
-
-
+    {{#if displayComments}}
+    {{#if currentUser}}
+    <button type="button" class="btn btn-secondary" id="hide-comment"><span class="glyphicon glyphicon-comment"></span> Hide Comments</button>
+    {{> comments}}
+    {{else}}
+    <button type="button" class="btn btn-secondary" id="showcomment"><span class="glyphicon glyphicon-comment"></span> Comments ({{commentScore}})</button>
+    {{/if}}
+    {{else}}
+		<button type="button" class="btn btn-secondary" id="showcomment"><span class="glyphicon glyphicon-comment"></span> Comments ({{commentScore}})</button>
+    {{/if}}
 
   </div>
 

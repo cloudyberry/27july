@@ -38,7 +38,7 @@ Meteor.startup(function() {
       var user1Id = Meteor.users.findOne({username: 'Urth Tan'})._id;
 
       Reviews.insert({
-        reviewName: "CS1020: Data Structures and Algorithms",
+        reviewName: "CS1020 Data Structures and Algorithms I",
         reviewPost: "Lectures are so hard to understand. tutorials are even harder. DONT EVEN BOTHER TRYING",
         semester: "AY 17/18 SEMESTER TWO",
         diff: "Hard",
@@ -61,15 +61,15 @@ Meteor.startup(function() {
 
       });
 
-      Modules.insert({
-        reviewName: "CS1020: Data Structures and Algorithms"
-      });
+Modules.insert({
+  reviewName: "CS1020 Data Structures and Algorithms I"
+})
 
       // User 1
 
 
       Reviews.insert({
-        reviewName: "MA1312: Calculus with Applications",
+        reviewName: "MA1312 Calculus with Applications",
         reviewPost: "Prof makes the lectures very interesting",
         semester: "AY 17/18 SEMESTER TWO",
         diff: "Moderate",
@@ -91,9 +91,7 @@ Meteor.startup(function() {
         userId: user1Id,
       });
 
-      Modules.insert({
-        reviewName:"MA1312: Calculus with Applications"
-      });
+
       // User 2
       Accounts.createUser({
         username: 'Oh Ming Xuan',
@@ -110,28 +108,6 @@ Meteor.startup(function() {
 
       var user2Id = Meteor.users.findOne({username: 'Oh Ming Xuan'})._id;
 
-      Reviews.insert({
-        reviewName: "GER1000: Quantitative Reasoning",
-        reviewPost: "Tutorials are extremely tough",
-        semester: "AY 17/18 SEMESTER ONE",
-        diff: "Hard",
-        recommendation: "3",
-        workload: "Low",
-        webcast: "No",
-        steepness: "High",
-        hashtag: "",
-        author: "Oh Ming Xuan",
-        year: '2',
-        school:'Arts and Social Sciences',
-        date: date,
-        createdAt: new Date(),
-        vetted: 0,
-        likeScore: 0,
-
-        dislikeScore: 0,
-        voted: ["Oh Ming Xuan"],
-        userId: user2Id,
-      });
 
       Accounts.createUser({
         username: 'kaikai',
@@ -147,28 +123,6 @@ Meteor.startup(function() {
       });
 
       var user10Id = Meteor.users.findOne({username: 'kaikai'})._id;
-
-      Reviews.insert({
-        reviewName: "CS1020: Data Structures and Algorithms",
-        reviewPost: "Lectures are so hard to understand. tutorials are even harder. DONT EVEN BOTHER TRYING",
-        semester: "AY 17/18 SEMESTER TWO",
-        diff: "Hard",
-        recommendation: "2",
-        workload: "Low",
-        webcast: "Yes",
-        steepness: "High",
-        hashtag: "#WebcastFTW",
-        author: "Kaikai",
-        year: '2',
-        school:'Dentistry',
-        date: date,
-        createdAt: new Date(),
-        vetted: 0,
-        likeScore: 0,
-        dislikeScore: 0,
-        voted: ["kaikai"],
-        userId: user10Id,
-      });
 
 
       // User 3
@@ -188,7 +142,7 @@ Meteor.startup(function() {
       // var user3Id = Meteor.users.findOne({username: 'Pamela Teo Jia Yu'})._id;
 
       Reviews.insert({
-        reviewName: "CS1231: Discrete Structures",
+        reviewName: "CS1231 Discrete Structures",
         reviewPost: "Tutorials are extremely tough",
         semester: "AY 17/18 SEMESTER ONE",
         diff: "Hard",
@@ -226,7 +180,7 @@ Meteor.startup(function() {
       var user4Id = Meteor.users.findOne({username: 'Vera Koh Ying Sim'})._id;
 
       Reviews.insert({
-        reviewName: "IS1103: Computing and Society",
+        reviewName: "IS1103 Computing and Society",
         reviewPost: "You can do your project during lecture time",
         semester: "AY 17/18 SEMESTER ONE",
         diff: "Moderate",

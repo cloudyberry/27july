@@ -64,3 +64,12 @@ label:hover {
   margin-bottom: 27px;
 	 outline:white;
 }
+/* Mobile phone layout */
+@media (max-width: 450px) {
+
+  #profile-wrap, #editreviewPost {
+
+    width: 350px;
+  }
+
+}

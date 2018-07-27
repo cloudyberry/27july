@@ -27,6 +27,14 @@ Template.hashtags.helpers({
 		displayComments: function() {
 			return Session.equals('showCommentsId', this._id);
 		},
+
+		liked: function () {
+				return Session.equals('likeId', this._id);
+		},
+		disliked: function () {
+				return Session.equals('dislikeId', this._id);
+		}
+
 });
 Template.hashtags.events({
 
@@ -38,6 +46,9 @@ Template.hashtags.events({
 	},
 
 	"click #like": function() {
+		if (!Meteor.userId()) {
+			Bert.alert("Please log in to Vote", "danger", "growl-top-right");
+		}
 		Session.set('likeId', this._id);
 
 		var thisUser = Meteor.userId();
@@ -95,6 +106,9 @@ Template.hashtags.events({
 
 
 	"click #dislike": function() {
+		if (!Meteor.userId()) {
+			Bert.alert("Please log in to Vote", "danger", "growl-top-right");
+		}
 		Session.set('dislikeId', this._id);
 		var thisUser = Meteor.userId();
 		var thisReview = Reviews.findOne({_id: this._id})._id;
@@ -146,6 +160,9 @@ Template.hashtags.events({
 	},
 
 	"click #showcomment": function() {
+		if (!Meteor.userId()) {
+			Bert.alert("Please log in to Comment", "danger", "growl-top-right");
+		}
 	//	var thisUser = Meteor.userId();
 	//	var thisReview = Reviews.findOne({_id: this._id})._id;
 	//	var reviewAuthor = Reviews.findOne({_id: this._id}).userId;

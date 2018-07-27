@@ -23,6 +23,11 @@ Template.search.helpers({
 		return reviews;
 	},
 
+	Modules() {
+				 console.log(Modules.find().count());
+				 return Modules.find({}, {sort: {ModuleCode:1}});
+		 },
+
 
 	matchedReviews: function() {
 			//get reviews from method: returnSearch
@@ -202,6 +207,8 @@ Template.search.events({
 		Session.set('showCommentsId', null);
 	},
 });
+
+
 
 //returning a session that is selected
 //checks if it is selected or empty
